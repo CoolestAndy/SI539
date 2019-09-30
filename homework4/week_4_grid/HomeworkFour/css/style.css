@@ -1,0 +1,289 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  /*Your code here */
+  display: inline-block;
+  padding-right: 20px;
+}
+
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;/*Your code here - remove the underline*/;
+}
+
+nav a:hover{
+  text-decoration: underline;/*Your code here - add the underline*/;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: relative;/*Your code here - position relative to the parent */;
+  top: -40px;    /*Your code here - place 40px higher */;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+/*Your code here*/.skip a:focus{
+  top: 0px;
+
+/*Add the selector and rule to move the skip link to the exact top.*/
+}
+
+/*Your code here*/*:focus {
+  border-style: solid black;
+  border-width: 2px;
+/*Add the selector and code to put a 2px black border around all elements in focus.*/
+}
+
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;  /*Can you explain what this does?*/
+  grid-row: 7 / auto;   /*Can you rewrite it?*/
+  padding-top: 30px;
+  text-align: center;
+}
+
+
+.container{
+  /*Your code here  */
+  display: grid;
+  grid-template-columns: 100px 500px 100px;
+  grid-row-gap: 15px;
+  /*Provided*/
+  grid-template-rows: 30px auto auto auto auto auto 100px; 
+  width: 100vw; 
+}
+
+.nav{
+   /*Your code here */
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  /*Provided*/
+  background-color: #ddd;
+  padding: 20px 0; 
+  text-align: left; 
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */
+  background-image: url("../images/header.jpg");      /* Your code here - Link to header.jpg in the images folder */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+
+  /*Your code here - cover the entire row*/
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.about-image{
+  /*Your code here */
+  background-image: url("../images/about.jpg");
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.about{
+  /*Your code here */
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.method-image{
+  /*Your code here */
+  background-image: url("../images/method.jpg");
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.method{
+    /*Your code here - start in the 2nd column*/
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.clients-image{
+ /*Your code here */
+  background-image: url("../images/clients.jpg");
+  grid-column: 1/-1;
+  grid-row: 5/6;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.clients{
+ /*Your code here */
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+.contact-image{
+   /*Your code here */
+   background-image: url("../images/contact.jpg");
+   grid-column: 1/-1;
+   grid-row: 6/7;
+   max-height: 700px;
+   overflow: hidden;
+}
+
+.contact{
+   /*Your code here */
+   grid-column: 2/3;
+   grid-row: 6/7;
+}
+
+.text-block{
+
+   /*Your code here */
+  align-self: center;
+  justify-self: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+}
+
+
+
+@media screen and (min-width: 800px) {
+
+  .container{
+    /*Your code here */
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+  } 
+
+  .nav{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    background-color: #ddd;
+    padding: 35px 0; 
+    text-align: right;
+     /*Your code here */
+  }
+
+  .about-image{
+     /*Your code here */
+     background-image: url("../images/about.jpg");
+     grid-column: 2/4;
+     grid-row: 3/4;
+     max-height: 700px;
+     overflow: hidden;
+    }
+
+  .about{
+    /*Your code here */
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+
+  .method-image{
+    /*Your code here */
+    background-image: url("../images/method.jpg");
+    grid-column: 3/5;
+    grid-row: 4/5;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .method{
+    /*Your code here */
+    grid-column: 2/4;
+    grid-row: 4/5;
+  }
+
+  .clients-image{
+    /*Your code here */
+    background-image: url("../images/clients.jpg");
+    grid-column: 2/4;
+    grid-row: 5/6;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .clients{
+    /*Your code here */
+    grid-column: 3/5;
+    grid-row: 5/6;
+  }
+
+  .contact-image{
+    /*Your code here */
+    background-image: url("../images/contact.jpg");
+    grid-column: 3/5;
+    grid-row: 6/7;
+    max-height: 700px;
+    overflow: hidden;
+  }
+
+  .contact{
+    /*Your code here */
+    grid-column: 2/4;
+    grid-row: 6/7;
+   }
+
+}  /*End the media query*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: unset;/* Your code here - set to default setting */
+    transition: unset;/* Your code here - set to default setting */
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0;
+  }
+}
