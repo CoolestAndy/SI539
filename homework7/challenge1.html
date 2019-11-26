@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+    
+<!-- Step 1: Adding a listener
+Add a listener that simply displays an alert, ie. window.alert("Yep, my function is being called");
+
+
+Step 2: Display the email fields
+Now we'll replace that alert() code so that our function actually does something useful! Using JavaScript, make the emailfield paragraph appear when the checkbox is clicked.
+
+Step 3: Making the email field toggle
+When you test your form at the moment, you'll notice that you can click on the checkbox and the email field displays, but when you un-check the checkbox the extra paragraph doesn't hide itself again!  Used the "checked" property to test whether a checkbox was checked.  Then use an if statement to toggle the emailfield appear and disappear as appropriate. -->
+
+  <head>
+    <title>JavaScript Challenge #1</title>
+    <style>
+      #emailField{
+        display: none;
+      }
+    </style> 
+  </head>
+  <body>
+    <h1>Challenge One</h1>
+    <form action="challenge2.html">
+      <fieldset>
+        <legend>Email subscriptions</legend>
+        <div id="check">
+          <label>
+            <input type="checkbox" name="subscribe" id="subscribe">
+            Check to toggle the email field.
+          </label>
+        </div>
+
+        <div id="emailField">
+          <label>
+            Email Address: 
+            <input type="text" name="email" id="email">
+          </label>
+        </div>
+
+        <input type = "submit" value = "Go To Challenge 2">
+      </fieldset>
+    </form>
+    <script src = "js/challenge1.js"></script>
+  </body>
+</html>

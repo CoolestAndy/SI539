@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Challenge 3</title>
+  <style type="text/css">
+    /*fieldset{
+      width: 45%;
+      display: inline-block;
+    }*/
+
+    form{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 20px;
+    }
+
+    input[type="submit"]{
+      width: 25%;
+      min-height: 5vh;
+      grid-row-gap: 20px;
+      justify-self:center;
+      border: 3px solid green;
+      grid-column: 1 / span 2;
+      font-size: 200%;
+    }
+  </style>
+</head>
+<body>
+  <h1> Challenge 3</h1>
+	 <form action="challenge4.html" id ="ch3form">
+      <fieldset>
+        <legend>Current class standing:</legend>
+        <div>
+          <br> 
+          <label>
+            <input type="radio" name ="standing" value = "1" id="freshman"> Freshman
+          </label><br>
+          <label>
+            <input type="radio" name ="standing" value = "2" id="soph"> Sophomore
+          </label><br>
+          <label>
+            <input type="radio" name ="standing" value = "3" id="jr"> Junior
+          </label><br>
+          <label>
+            <input type="radio" name ="standing" value = "4" id="sr"> Senior
+          </label><br>
+          <label>
+            <input type="radio" name ="standing" value = "5" id="grad"> Graduate
+          </label><br>
+          <label>
+            <input type="radio" name ="standing" value = "6" id="other"> Other
+          </label><br>
+      </div>
+  </fieldset>
+  <fieldset>
+  <legend>Favorite fruit:</legend>
+        <div>
+          <br> 
+          <label>
+            <input type="radio" name ="fruit" value = "1" id="kum"> Kumquat
+          </label><br>
+          <label>
+            <input name ="fruit" type="radio" value = "2" id="figs"> Figs
+          </label><br>
+          <label>
+            <input name ="fruit" type="radio" value = "3" id="straw"> Strawberries
+          </label><br>
+          <label>
+            <input type="radio" name ="fruit" value = "4" id="blue"> Blueberries
+          </label><br>
+          <label>
+            <input type="radio"  name ="fruit" value = "5" id="grad"> Other
+          </label><br>
+      </div>
+  </fieldset>
+  <input type="submit" value="Let us know">
+</form>
+<script src = "js/challenge3.js"></script>
+</body>
+</html>
