@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather</title>
+<!-- Don't forget to link to jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+	input{
+		margin: 10px 0px;
+		padding: 5px;
+	}
+	#forecast{
+		display: none;/*This div should not appear until the weather is returned.*/
+	}
+	#forecast div{
+		width: 25vw;
+		border: 8px solid blue;
+		margin: 0 auto;
+		background: black;
+	}
+	img{
+		width:100%;
+	}
+</style>
+<script>
+	function kelvinToCelsius(kelvin) {
+		return kelvin - 273.15;
+	}
+
+	function kelvinToFahrenheit(kelvin) {
+		return (kelvin - 273.15) * 9 / 5 + 32;
+	}
+    function gettingJSON(){
+    	console.log("Hi");
+    	// Use the OpenWeather API to return:
+    	//  the current temperature 
+    	//  the high temperature for the day
+    	//  the low temperature for the day
+    	//  the icon for the current weather.
+
+
+
+    	// You will need to update this query with the city, weather format (Celsius or Fahrenheit) and your OpenWeatherMap ID
+    	 
+    	// Right now I have it set to Chicago.  The default should be Ann Abor/Fahreheit.
+		const APIID = "cc8b3b8ada470b2d66c8e80b59e138b3";
+		let city = $("#location").val();
+		city = city === "" ? "Ann Arbor" : city;
+		let query = "https://api.openweathermap.org/data/2.5/weather?q=" + encodeURIComponent(city) + "&APPID=" + APIID;
+		console.log("Query is :" + query);
+
+        $.getJSON(query,function(json){
+            console.log(JSON.stringify(json));
+			$("#forecast").css("display", "unset");
+			$('#loc').text(city);
+			$("#tempImg").attr("src", `http://openweathermap.org/img/w/${json.weather[0].icon}.png`);
+			if ($("#celcius").is(":checked")) {
+				$("#temp").text(kelvinToCelsius(json.main.temp).toFixed(2));
+				$("#low").text(kelvinToCelsius(json.main.temp_min).toFixed(2));
+				$("#high").text(kelvinToCelsius(json.main.temp_max).toFixed(2));
+			} else {
+				$("#temp").text(kelvinToFahrenheit(json.main.temp).toFixed(2));
+				$("#low").text(kelvinToFahrenheit(json.main.temp_min).toFixed(2));
+				$("#high").text(kelvinToFahrenheit(json.main.temp_max).toFixed(2));
+			}
+		})
+    
+    }
+    </script>
+</head>
+<body>
+	<!-- DO NOT CHANGE ANY CODE IN THE BODY OF THIS FILE. -->
+	<label for ="location">City:</label><input type = "text" id = "location"><br>
+	<input type = "radio" name = "temp" value = "imperial" id = "fahrenheit"> <label for = "fahrenheit">Fahrenheit</label><br>
+	<input type = "radio" name = "temp" value = "metric" id = "celcius"> <label for = "celcius">Celcius</label><br>
+
+	<button id = "getIt" onclick = " gettingJSON()">Get Weather</button>
+
+
+	<div id = "forecast">
+		<div>
+		<img id = "tempImg" src="" alt = "" title = "">
+		</div>
+		<p>The temperature in <span id = "loc"></span> is currently <span id = "temp"></span>.</p>
+		<p>The high today will be <span id = "high"></span> and the low will be <span id = "low"></span>.</p>
+		
+	</div>
+</body>
+</html>
