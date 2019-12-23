@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="application-name" content="Cell Phone Review System">
+    <meta name="author" content="Haotian Wang">
+    <meta name="email" content="hautian@umich.edu">
+    <link rel="icon" href="img/favorite.ico" type="image/x-icon">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Papa Parse -->
+    <script src="js/papaparse.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/models.js"></script>
+    <script src="js/index.js"></script>
+    <title>Cell Phone Review System</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="nav navbar-nav navbar-center">
+                <a class="navbar-brand" href="#">Cell Phone Review System</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <form>
+            <div class="selector">
+                <div>
+                    <label for="keywords">Keywords</label>
+                    <input name="keywords" id="keywords" type="text" value="">
+                </div>
+                <div>
+                    <label for="brand">Brand</label>
+                    <select name="brand" id="brand">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div id="selector-price">
+                    <label for="min_price">Price</label>
+                    <input name="min_price" id="min_price" type="number" min="0" value="">
+                    <label for="max_price">-</label>
+                    <input name="max_price" id="max_price" type="number" min="0" value="">
+                </div>
+                <button class="btn btn-primary" id="filter" type="submit">
+                    <i class="fas fa-search"></i>&nbsp;Search
+                </button>
+                <button class="btn btn-secondary" id="reset" type="reset">
+                    <i class="fas fa-undo"></i>&nbsp;Reset
+                </button>
+            </div>
+            <div class="sort">
+                <label>Sorted by</label>
+                <input name="sort" id="sort" type="hidden" value="">
+                <div class="nav nav-pills" id="btn-sort">
+                    <button class="btn btn-secondary" id="sort-by-name" value="title-ascending"><i class="fas fa-sort-alpha-down"></i>&nbsp;Name</button>
+                    <button class="btn btn-secondary" id="sort-by-reviewers" value="totalReviews-descending"><i class="fas fa-sort-amount-down"></i>&nbsp;Reviewers</button>
+                    <button class="btn btn-secondary" id="sort-by-rating" value="rating-descending"><i class="fas fa-sort-numeric-down-alt"></i>&nbsp;Rating</button>
+                    <button class="btn btn-secondary" id="sort-by-price" value="prices-ascending"><i class="fas fa-sort-numeric-down"></i>&nbsp;Price</button>
+                </div>
+            </div>
+        </form>
+        <div class="loading">
+            <i class="fas fa-spinner fa-spin fa-10x"></i>
+        </div>
+        <div class="gallery" id="products">
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">SI-539 Cell Phone Review System</span>
+        </div>
+    </footer>
+</body>
+
+</html>
